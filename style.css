@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+
+#calculator {
+    width: 20rem;
+    padding: 0.5rem;
+    border: 0.1rem red solid;
+}
+
+#display {
+    /* height: 3rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    border: 0.1rem red solid;
+    margin-bottom: 0.3rem;
+}
+
+#output {
+    align-self: flex-end;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 0.3rem;
+    border: 0.1rem red solid;
+}
+
+#clear {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+button {
+    padding: 1rem;
+}
