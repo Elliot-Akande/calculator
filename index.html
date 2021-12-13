@@ -1,51 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <div id="display">
+        12345
+    </div>
+    <div id="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+        <button>+</button>
+    </div>
 </body>
 <script>
-    const add = function(a, b) {
+    const add = function (a, b) {
         return a + b;
     };
-    
-    const subtract = function(a, b) {
+
+    const subtract = function (a, b) {
         return a - b;
     };
 
-    const multiply = function(a, b) {
+    const multiply = function (a, b) {
         return a * b;
     };
 
-    const divide = function(a, b) {
+    const divide = function (a, b) {
         return a / b;
     };
 
-    const operate = function (operator, a , b) {
-        if(!a || !b){
+    const operate = function (operator, a, b) {
+        if (!a || !b) {
             return "One or more operand(s) left empty";
         }
 
         switch (operator) {
             case '+':
-                return add (a, b);
+                return add(a, b);
                 break;
             case '-':
-                return subtract (a, b);
+                return subtract(a, b);
                 break;
             case '*':
-                return multiply (a, b);
+                return multiply(a, b);
                 break;
             case '/':
-                return divide (a, b);
+                return divide(a, b);
                 break;
-            default: 
+            default:
                 return "Invalid operator!";
         }
     };
 </script>
+
 </html>
