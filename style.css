@@ -24,16 +24,35 @@ body{
     align-self: flex-end;
 }
 
+#clear { grid-area: clear;}
+#delete { grid-area: delete;}
+.seven { grid-area: seven;}
+.eight { grid-area: eight;}
+.nine { grid-area: nine;}
+.divide { grid-area: divide;}
+.four { grid-area: four;}
+.five { grid-area: five;}
+.six { grid-area: six;}
+.multiply { grid-area: multiply;}
+.one { grid-area: one;}
+.two { grid-area: two;}
+.three { grid-area: three;}
+.subtract { grid-area: subtract;}
+.zero { grid-area: zero;}
+.decimal { grid-area: decimal;}
+.equals { grid-area: equals;}
+.plus { grid-area: plus;}
+
 #buttons {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+        'clear clear delete delete'
+        'seven eight nine divide'
+        'four five six multiply'
+        'one two three subtract'
+        'zero decimal equals plus';
     grid-gap: 0.3rem;
     border: 0.1rem red solid;
-}
-
-#clear {
-    grid-column-start: 3;
-    grid-column-end: 5;
 }
 
 button {
