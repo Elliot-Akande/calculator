@@ -100,14 +100,14 @@ const operatorPressed = function () {
     if(!operandFirst){
         operandFirst = "0";
     }
-    if (operator && outputString !== "ERROR"){
-        console.log("asdf");
+    if (operator && operandSecond && outputString !== "ERROR"){
         operandFirst = (operate (operator, +operandFirst, +operandSecond)).toString();
         operandSecond = "";
         outputString = operandFirst;
     }
-    
-    if (outputString !== "ERROR") {operator = this.innerText;}
+    if (outputString !== "ERROR") {
+        operator = this.innerText;
+    }
 
     buildInputString();
     updateInput();
