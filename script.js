@@ -4,6 +4,8 @@ let operator = "";
 let operandFirst = "";
 let operandSecond = "";
 let equals = "";
+let decimalFirst = false;
+let decimalSecond = false;
 
 const add = (a, b) => a + b; 
 const subtract = (a, b) => a - b;
@@ -48,16 +50,40 @@ const numberPressed = function () {
     }
 
     if (!operator) {
-        if (operandFirst && operandFirst.substr(0, 1) === "0"){
+        if(!operandFirst && this.innerText === "."){
+            operandFirst = "0.";
+            decimalFirst = true;
+        }
+
+        if (operandFirst && operandFirst.substr(0, 1) === "0" && this.innerText !== "." && decimalFirst === false){
             operandFirst = this.innerText; 
         } else {
-            operandFirst += this.innerText ;
+            if (this.innerText === "."){
+                if (!decimalFirst){
+                    operandFirst += this.innerText;
+                    decimalFirst = true;
+                }
+            } else {
+                operandFirst += this.innerText;
+            }
         }
     } else {
-        if (operandSecond && operandSecond.substr(0, 1) === "0"){
+        if(!operandSecond && this.innerText === "."){
+            operandSecond = "0.";
+            decimalSecond = true;
+        }
+
+        if (operandSecond && operandSecond.substr(0, 1) === "0" && this.innerText !== "." && decimalSecond === false){
             operandSecond = this.innerText; 
         } else {
-            operandSecond += this.innerText ;
+            if (this.innerText === "."){
+                if (!decimalSecond){
+                    operandSecond += this.innerText;
+                    decimalSecond = true;
+                }
+            } else {
+                operandSecond += this.innerText;
+            }
         }
     }    
 
@@ -92,6 +118,8 @@ const clearDisplay = function () {
     operator = "";
     operandFirst = "";
     operandSecond = "";
+    decimalFirst = false;
+    decimalSecond = false;
 
     updateInput();
     updateOutput();
@@ -99,10 +127,16 @@ const clearDisplay = function () {
 
 const deleteCharacter = function () {
     if (operandSecond){
+        if (operandSecond.substr(operandSecond.length - 1) === ".") {
+            decimalSecond = false;
+        }
         operandSecond = operandSecond.substr(0, operandSecond.length - 1);
     } else if (operator){
         operator = "";
     } else {
+        if (operandFirst.substr(operandFirst.length - 1) === ".") {
+            decimalFirst = false;
+        }
         operandFirst = operandFirst.substr(0, operandFirst.length - 1);
     }
     operandSecond ? outputString = operandSecond : outputString = operandFirst;
@@ -123,6 +157,10 @@ const equalsPressed = function () {
     equals = "";
 }
 
+// const decimalPressed = function () {
+
+// }
+
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(number => number.addEventListener("click", numberPressed));
 
@@ -138,3 +176,5 @@ deleteButton.addEventListener("click", deleteCharacter);
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", equalsPressed);
 
+// const decimalButton = document.querySelector("#decimal");
+// decimalButton.addEventListener("click", decimalPressed);
