@@ -36,7 +36,7 @@ const operate = function (operator, a, b) {
             output = a;
     }
 
-    return Math.round(output * 10000000) / 10000000;
+    return !(output === "ERROR") ? Math.round(output * 1000000000) / 1000000000 : output;
 };
 
 const updateInput = () => document.querySelector("#input").innerText = inputString;
@@ -100,12 +100,14 @@ const operatorPressed = function () {
     if(!operandFirst){
         operandFirst = "0";
     }
-    if (operator){
-        operandFirst = operate (operator, +operandFirst, +operandSecond);
+    if (operator && outputString !== "ERROR"){
+        console.log("asdf");
+        operandFirst = (operate (operator, +operandFirst, +operandSecond)).toString();
         operandSecond = "";
         outputString = operandFirst;
     }
-    operator = this.innerText;
+    
+    if (outputString !== "ERROR") {operator = this.innerText;}
 
     buildInputString();
     updateInput();
@@ -141,6 +143,8 @@ const deleteCharacter = function () {
     }
     operandSecond ? outputString = operandSecond : outputString = operandFirst;
 
+    console.log(operandFirst, operator, operandSecond);
+
     buildInputString();
     updateInput();
     updateOutput();
@@ -157,10 +161,6 @@ const equalsPressed = function () {
     equals = "";
 }
 
-// const decimalPressed = function () {
-
-// }
-
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(number => number.addEventListener("click", numberPressed));
 
@@ -175,6 +175,3 @@ deleteButton.addEventListener("click", deleteCharacter);
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", equalsPressed);
-
-// const decimalButton = document.querySelector("#decimal");
-// decimalButton.addEventListener("click", decimalPressed);
