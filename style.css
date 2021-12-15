@@ -15,7 +15,7 @@ body{
 }
 
 #display {
-    min-height: 4.9rem;
+    min-height: 5rem;
     width: 19rem;
     display: flex;
     gap: 0.5rem;
