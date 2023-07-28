@@ -95,8 +95,11 @@ button {
     background-color: rgb(253, 152, 69);
 }
 
+button:hover {
+    transform: scale(1.03);
+}
+
 .number:hover {
-    background: rgb(76, 76, 76);
     color: rgb(253, 152, 69);
 }
 
