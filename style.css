@@ -99,6 +99,10 @@ button:hover {
     transform: scale(1.03);
 }
 
+button:active {
+    transform: scale(0.97);
+}
+
 .number:hover {
     color: rgb(253, 152, 69);
 }
