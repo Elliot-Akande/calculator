@@ -3,40 +3,41 @@
 body{
     display: flex;
     justify-content: center;
-    margin: 3rem;
+    margin: 20vh 3rem;
+    background-color: rgb(168, 222, 255);
+    font-family: 'Nunito', sans-serif;
 }
 
 #calculator {
-    width: 20rem;
-    padding: 0.5rem;
+    width: 25rem;
+    padding: 0.9rem;
     border: 0.2rem rgb(56, 56, 56) solid;
-    border-radius: 0.4rem;
+    border-radius: 1rem;
     background-color: rgb(240, 240, 240);
 }
 
 #display {
-    min-height: 5rem;
-    width: 19rem;
+    min-height: 7rem;
+    width: 23rem;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 0.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.4rem;
     background-color: rgba(121, 161, 40, 0.384);
     margin-bottom: 0.5rem;
     justify-content: space-between;
-    padding-inline: 0.5rem;
     font-family: 'Nunito', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-weight: normal;
+    font-size: 1.5rem;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 #output {
     align-self: flex-end;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: right;
 }
 
@@ -67,17 +68,18 @@ body{
         'four five six multiply'
         'one two three subtract'
         'zero decimal equals plus';
-    grid-gap: 0.3rem;
+    grid-gap: 0.4rem;
     background-color: rgb(240, 240, 240);
 }
 
 button {
-    padding: 1rem;
+    padding: 1.5rem;
     color: white;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.3rem;
     border-radius: 0.3rem;
+    border-style: none;
 }
 
 .number {
@@ -90,4 +92,14 @@ button {
 
 #clear, #delete {
     background-color: rgb(253, 152, 69);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+}
+
+footer p {
+    color: rgb(56, 56, 56);
 }
