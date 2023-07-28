@@ -94,6 +94,20 @@ button {
     background-color: rgb(253, 152, 69);
 }
 
+.number:hover {
+    background: rgb(76, 76, 76);
+    color: rgb(253, 152, 69);
+}
+
+.operator:hover, #equals:hover {
+    background: rgb(161, 161, 161);
+    color: rgb(56, 56, 56);
+}
+
+#clear:hover, #delete:hover {
+    background-color: rgb(255, 132, 31);
+}
+
 footer {
     position: absolute;
     bottom: 0;
